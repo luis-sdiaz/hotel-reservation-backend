@@ -33,11 +33,11 @@ public class Reserva {
     private BigDecimal valorTotal;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "estado_reserva", nullable = false)
+    @Column(name = "estado_reserva", nullable = false, length = 20)
     private EstadoReserva estadoReserva;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "temporada_reserva", nullable = false)
+    @Column(name = "temporada_reserva", nullable = false, length = 30)
     private TemporadaReserva temporadaReserva = TemporadaReserva.TEMPORADA_BAJA;
 
     @ManyToMany(fetch = FetchType.LAZY)
