@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS reservas (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    habitacion_id BIGINT NOT NULL,
+    cliente_id BIGINT NOT NULL,
+    fecha_entrada DATE NOT NULL,
+    fecha_salida DATE NOT NULL,
+    valor_total DECIMAL(12,2) NOT NULL,
+    estado_reserva VARCHAR(20) NOT NULL,
+    CONSTRAINT fk_reserva_habitacion FOREIGN KEY (habitacion_id) REFERENCES habitaciones(id),
+    CONSTRAINT fk_reserva_cliente FOREIGN KEY (cliente_id) REFERENCES clientes(id)
+);
+

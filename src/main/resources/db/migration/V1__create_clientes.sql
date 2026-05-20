@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS clientes (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(120) NOT NULL,
+    email VARCHAR(160) NOT NULL UNIQUE,
+    documento VARCHAR(40) NOT NULL,
+    telefono VARCHAR(30),
+    activo BOOLEAN NOT NULL DEFAULT TRUE
+);
+
+CREATE INDEX IF NOT EXISTS idx_clientes_email ON clientes(email);
+
